@@ -4,8 +4,8 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	"github.com/github.com/Thobif/gin-framework9/routes"
-	
+	"github.com/Thobif/gin-framework9/configs"
+	"github.com/Thobif/gin-framework9/routes"
 )
 
 func main() {
@@ -14,10 +14,13 @@ func main() {
 }
 
 func SetupRouter() *gin.Engine{
+	//Connection db
+	configs.Connection()
 	router := gin.Default()
 
 	apiV1 := router.Group("/api/v1")//127.0.0.1:3000/api/v1
-	routes.InitHomeRoutes(apiV1)
 
+	routes.InitHomeRoutes(apiV1)
+	routes.InitUserRoutes(apiV1)//127.0.0.1:3000/api/v1/users/register
 	return router
 }

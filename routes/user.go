@@ -2,7 +2,7 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	usercontroller "github.com/github.com/Thobif/gin-framework9/controllers/user"
+	usercontroller "github.com/Thobif/gin-framework9/controllers/user"
 )
 
 func InitUserRoutes(rg *gin.RouterGroup) {
